@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  video-processing-api:
+    build: .
+    ports:
+      - "5000:5000"
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - .:/app
